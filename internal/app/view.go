@@ -281,7 +281,7 @@ func (m model) detailView(row Port) string {
 		field("User", value(row.User)), field("Command", value(row.Command)), field("CWD", value(row.CWD)),
 	}
 	if row.Container != "" {
-		lines = append(lines, "", sectionStyle.Render("Docker Compose:"),
+		lines = append(lines, "", sectionStyle.Render("Docker:"),
 			field("Container", row.Container), field("Project", value(row.ComposeProject)),
 			field("Service", value(row.ComposeService)), field("Container port", value(row.ContainerPort)))
 	}
