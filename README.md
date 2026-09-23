@@ -4,7 +4,7 @@
 
 A simple TUI port monitor for Linux.
 
-## Features
+## Overview
 
 - Real-time view of listening TCP and UDP ports over IPv4 and IPv6
 - Process details, including PID, working directory, and Nerd Font icons
