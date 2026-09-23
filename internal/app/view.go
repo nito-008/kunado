@@ -112,7 +112,6 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 var (
 	titleStyle            = lipgloss.NewStyle().Bold(true).Foreground(lipgloss.Color("6"))
 	headerStyle           = lipgloss.NewStyle().Bold(true).Foreground(lipgloss.Color("4"))
-	sectionStyle          = lipgloss.NewStyle().Bold(true).Foreground(lipgloss.Color("6"))
 	selectedStyle         = lipgloss.NewStyle().Foreground(lipgloss.Color("0")).Background(lipgloss.Color("6"))
 	selectedBackdropStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("0")).Background(lipgloss.Color("23"))
 	dimStyle              = lipgloss.NewStyle().Faint(true)
@@ -275,13 +274,12 @@ func (m model) detailView(row Port) string {
 		pid = strconv.Itoa(row.PID)
 	}
 	lines := []string{
-		sectionStyle.Render("Detail:"),
 		field("Address", fmt.Sprintf("%s:%d", row.IP, row.Port)),
 		field("Protocol", row.Protocol), field("PID", pid), field("Process", row.Process),
 		field("User", value(row.User)), field("Command", value(row.Command)), field("CWD", value(row.CWD)),
 	}
 	if row.Container != "" {
-		lines = append(lines, "", sectionStyle.Render("Docker:"),
+		lines = append(lines, "",
 			field("Container", row.Container), field("Project", value(row.ComposeProject)),
 			field("Service", value(row.ComposeService)), field("Container port", value(row.ContainerPort)))
 	}
