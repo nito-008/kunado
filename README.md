@@ -1,5 +1,7 @@
 # kunado
 
+<img width="2551" height="684" alt="image" src="https://github.com/user-attachments/assets/bc077da0-ca58-4289-95b8-cc6704ee939e" />
+
 A simple TUI port monitor for Linux.
 
 ## Features
