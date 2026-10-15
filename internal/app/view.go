@@ -303,7 +303,7 @@ func processIcon(process string) (string, string) {
 		return "󰡨", "4"
 	case strings.HasPrefix(p, "python"), strings.Contains(p, "uvicorn"), strings.Contains(p, "gunicorn"):
 		return "", "3"
-	case strings.Contains(p, "code"), strings.Contains(p, "vscode"):
+	case p == "code", strings.HasPrefix(p, "code-"), p == "vscode":
 		return "󰨞", "4"
 	case strings.HasPrefix(p, "node"), p == "npm", p == "npx", strings.Contains(p, "vite"), strings.HasPrefix(p, "bun"):
 		return "", "2"
@@ -339,4 +339,3 @@ func clipLines(value string, width, height int) string {
 	}
 	return strings.Join(lines, "\n")
 }
-
